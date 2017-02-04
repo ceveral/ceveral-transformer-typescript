@@ -20,7 +20,7 @@ export class TypescriptVisitor extends BaseVisitor {
         if (Object.keys(this.imports).length) {
             let out = [];
             for (let key in this.imports) {
-                let file = Path.basename(imports.find(m => m.name == key).fileName, '.record');
+                let file = Path.basename(imports.find(m => m.name == key).fileName, '.cev');
                 let array = [...this.imports[key]];
                 out.push(`import {${array.join(', ')}} from './${file}'`);
             }
